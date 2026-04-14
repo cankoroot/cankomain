@@ -1,4 +1,3 @@
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault()
@@ -12,7 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
-// active state
 const sections = document.querySelectorAll("section[id]")
 const navLinks = document.querySelectorAll(".nav-link")
 
@@ -37,7 +35,6 @@ function updateActiveLink() {
 
 window.addEventListener("scroll", updateActiveLink)
 
-// fade in scroll
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -52,7 +49,6 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-// Observe sections and cards
 document.querySelectorAll("section, .experience-card").forEach((el) => {
   el.style.opacity = "0"
   el.style.transform = "translateY(20px)"
@@ -60,7 +56,6 @@ document.querySelectorAll("section, .experience-card").forEach((el) => {
   observer.observe(el)
 })
 
-// Initialize
 document.addEventListener("DOMContentLoaded", () => {
   updateActiveLink()
 })
